@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="name">{{ msg }}</div>
+  <div class="name">{{ greeting() }}</div>
+  <div class="name">{{ hello("jlism") }}</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  export default{
+    setup() {
+      const msg ="즐거운 점심시간~~ 뭐 먹지 ?";
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+      const greeting = () => {
+        return"hi~~" ;
+      }
+
+      const hello = (name) => {
+        return`hello ${name}`;
+
+      }
+
+      return{
+        msg,
+        greeting,
+        hello
+        
+      }
+
+    }
   }
-}
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .name{
+    color: red;
+  }
 </style>
+
+
+
